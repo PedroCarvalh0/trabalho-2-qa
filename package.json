@@ -1,0 +1,16 @@
+{
+  "name": "techinclusiva-auditoria-acessibilidade",
+  "version": "1.0.0",
+  "description": "Auditoria automatizada de acessibilidade (WCAG 2.1 A/AA) do Portal TechInclusiva com axe-core CLI + parser Python",
+  "private": true,
+  "scripts": {
+    "driver": "powershell -ExecutionPolicy Bypass -File baixar_chromedriver.ps1",
+    "servidor": "python -m http.server 8080",
+    "scan": "axe http://localhost:8080/index.html --dir . --save resultado_axe.json --chromedriver-path ./drivers/chromedriver.exe",
+    "scan:corrigido": "axe http://localhost:8080/index_corrigido.html --dir . --save resultado_axe_corrigido.json --chromedriver-path ./drivers/chromedriver.exe",
+    "relatorio": "python parser_acessibilidade.py resultado_axe.json --comparar resultado_axe_corrigido.json --html-original index.html --html-corrigido index_corrigido.html --pdf relatorio_acessibilidade.pdf"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.14.0"
+  }
+}

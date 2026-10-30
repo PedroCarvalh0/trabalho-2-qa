@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+  Portal TechInclusiva - versão ORIGINAL (com barreiras de acessibilidade).
+  Este arquivo contém falhas propositais de WCAG 2.1 para a auditoria com axe-core.
+  A versão corrigida está em index_corrigido.html.
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #ffffff; color: #222; }
+    .topo { background: #1e3a8a; color: #fff; padding: 12px 24px; display: flex; align-items: center; gap: 16px; }
+    .topo a { color: #fff; }
+    .menu a { margin-right: 12px; text-decoration: none; }
+    .conteudo { display: flex; gap: 24px; padding: 24px; }
+    .principal { flex: 3; }
+    .lateral { flex: 1; }
+    .data { color: #c4c4c4; font-size: 12px; }
+    .destaque { background: #ffd54f; color: #ffffff; padding: 8px; }
+    .rodape { background: #eeeeee; color: #aaaaaa; padding: 16px 24px; font-size: 12px; }
+    .btn-icone { background: #1e3a8a; border: 0; width: 32px; height: 32px; }
+    table { border-collapse: collapse; }
+    td, th { border: 1px solid #ccc; padding: 4px 8px; }
+  </style>
+</head>
+<body>
+
+  <div class="topo">
+    <img src="logo-techinclusiva.png" width="48" height="48">
+    <div style="font-size: 22px; font-weight: bold;">TechInclusiva</div>
+    <div class="menu">
+      <a href="#" tabindex="3">Início</a>
+      <a href="#" tabindex="1">Tecnologia</a>
+      <a href="#" tabindex="2">Acessibilidade</a>
+      <a href="#"><img src="icone-rss.png"></a>
+    </div>
+    <input type="text" placeholder="Buscar notícias...">
+    <button class="btn-icone"><img src="lupa.svg"></button>
+  </div>
+
+  <div class="conteudo">
+    <div class="principal">
+      <div style="font-size: 28px; font-weight: bold;">Notícias de hoje</div>
+
+      <h3>Governo lança programa de inclusão digital para pessoas com deficiência</h3>
+      <p class="data">Publicado em 30/10/2026 por Redação</p>
+      <img src="foto-programa.jpg" width="400" height="220">
+      <p>
+        O novo programa prevê a distribuição de leitores de tela e linhas braille
+        para escolas públicas de todo o país.
+        <a href="noticia-1.html">Clique aqui</a>
+      </p>
+
+      <h5>Pesquisa: 1 em cada 4 sites ainda bloqueia leitores de tela</h5>
+      <p class="data">Publicado em 29/10/2026 por Equipe de Dados</p>
+      <img src="grafico-pesquisa.png" alt="imagem" width="400" height="220">
+      <p class="destaque">Leia o estudo completo na nossa seção especial!</p>
+
+      <div id="lista-tags">
+        <div>WCAG</div>
+        <div>Leitores de tela</div>
+      </div>
+
+      <ul>
+        <div>Item de lista fora de &lt;li&gt;</div>
+        <li>Outro item</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th></th>
+          <th>Nível A</th>
+          <th>Nível AA</th>
+        </tr>
+        <tr>
+          <td>Sites conformes</td>
+          <td>38%</td>
+          <td>12%</td>
+        </tr>
+      </table>
+
+      <iframe src="about:blank" width="400" height="120"></iframe>
+    </div>
+
+    <div class="lateral">
+      <h2>Newsletter</h2>
+      <form>
+        <input type="text" id="nome">
+        <input type="email" id="nome" autocomplete="mail">
+        <select>
+          <option>Diária</option>
+          <option>Semanal</option>
+        </select>
+        <div role="button" aria-pressed="talvez" onclick="alert('Inscrito!')">Assinar</div>
+        <span role="checkbox" onclick="this.classList.toggle('on')"></span>
+      </form>
+
+      <h2>Mais lidas</h2>
+      <a href="noticia-2.html"></a>
+      <a href="noticia-3.html">Leia mais</a>
+      <a href="noticia-4.html">Leia mais</a>
+    </div>
+  </div>
+
+  <div class="rodape">
+    © 2026 TechInclusiva - Todos os direitos reservados.
+    <a href="#" accesskey="c">Contato</a>
+    <a href="#" accesskey="c">Carreiras</a>
+  </div>
+
+</body>
+</html>
