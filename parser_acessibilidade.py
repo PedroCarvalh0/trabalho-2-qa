@@ -624,7 +624,7 @@ def gerar_pdf(
     Introdução, Método, Diagnóstico, Correções e Conclusão (requer reportlab)."""
     try:
         from reportlab.lib import colors
-        from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY
+        from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT
         from reportlab.lib.pagesizes import A4
         from reportlab.lib.styles import ParagraphStyle
         from reportlab.pdfbase import pdfmetrics
@@ -936,7 +936,9 @@ def gerar_pdf(
                  "este relatório.")),
         ]
         if github:
-            e.append(p(md(f"Todo o código do projeto está no repositório `{github}`.")))
+            # alinhado à esquerda: a URL não quebra, e o texto justificado esticaria a linha anterior
+            e.append(p(f'Todo o código do projeto está no repositório <a href="{escape(github)}">{codigo(github)}</a>.',
+                       ParagraphStyle("repositorio", parent=corpo, alignment=TA_LEFT)))
         e += subsecao("Objetivos")
         e += itens([
             f"configurar e executar o {cli} no terminal do VSCode, auditando a página servida localmente",
