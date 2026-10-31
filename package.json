@@ -8,7 +8,7 @@
     "servidor": "python -m http.server 8080",
     "scan": "axe http://localhost:8080/index.html --dir . --save resultado_axe.json --chromedriver-path ./drivers/chromedriver.exe",
     "scan:corrigido": "axe http://localhost:8080/index_corrigido.html --dir . --save resultado_axe_corrigido.json --chromedriver-path ./drivers/chromedriver.exe",
-    "relatorio": "python parser_acessibilidade.py resultado_axe.json --comparar resultado_axe_corrigido.json --html-original index.html --html-corrigido index_corrigido.html --pdf relatorio_acessibilidade.pdf"
+    "relatorio": "python parser_acessibilidade.py resultado_axe.json --comparar resultado_axe_corrigido.json --html-original index.html --html-corrigido index_corrigido.html --pdf relatorio_acessibilidade.pdf --github https://github.com/PedroCarvalh0/trabalho-2-qa"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.14.0"

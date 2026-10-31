@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Servidor local (porta 8080)",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": ["-m", "http.server", "8080"],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "axe: varrer index.html",
+      "type": "shell",
+      "command": "npm run scan",
+      "problemMatcher": []
+    },
+    {
+      "label": "axe: varrer index_corrigido.html",
+      "type": "shell",
+      "command": "npm run scan:corrigido",
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: gerar relatório PDF",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "parser_acessibilidade.py", "resultado_axe.json",
+        "--comparar", "resultado_axe_corrigido.json",
+        "--html-original", "index.html",
+        "--html-corrigido", "index_corrigido.html",
+        "--pdf", "relatorio_acessibilidade.pdf",
+        "--github", "https://github.com/PedroCarvalh0/trabalho-2-qa"
+      ],
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true }
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 
 Trabalho Prático II — Qualidade e Teste de Software (UniSENAI)
 Ferramentas: **VSCode**, **axe-core CLI** e **Python**. Meta: conformidade **WCAG 2.1 nível AA**.
+Repositório: https://github.com/PedroCarvalh0/trabalho-2-qa
 
 ## Estrutura
 
